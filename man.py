@@ -59,3 +59,28 @@ elif choice == 2:
 
 else:
     print("Invalid choice")
+
+#this is a program of encapuslation in oops's concept
+class Student:
+    def __init__(self, name, marks):
+        self.name = name
+        self.__marks = marks    # private
+
+    def get_marks(self):
+        print(f"{self.name}has marks:{self.__marks}")
+        
+        # return marks properly
+
+    def update_marks(self, new_marks):
+        if 0 <= new_marks <=100:
+            self.__marks=new_marks
+            print(f"the upadated marks is {self.__marks}")
+        else:
+            print("the marks is should be between 0 to 100")
+        # only update if marks between 0 and 100
+
+s1 = Student("Aditya", 85)
+s1.get_marks()
+s1.update_marks(95)
+s1.get_marks()
+s1.update_marks(150)  # should show error message
