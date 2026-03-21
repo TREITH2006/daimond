@@ -84,3 +84,39 @@ s1.get_marks()
 s1.update_marks(95)
 s1.get_marks()
 s1.update_marks(150)  # should show error message
+#this is a program of inheritance in oops's concept
+class Animal:
+    def __init__(self, name, sound):
+        self.name = name
+        self.sound = sound
+
+    def speak(self):
+        print(f"{self.name} says {self.sound}")
+
+
+class Dog(Animal):
+    def __init__(self,name,sound,owner):
+        super().__init__(name,sound)
+        self.owner=owner
+    def fetch(self):
+        print(f"{self.name} is a name and it make sound{self.sound} and its owner is {self.owner}")
+    # add owner attribute
+    # add fetch method
+
+class Cat(Animal):
+    def __init__(self, name, sound,indoor):
+        super().__init__(name, sound)
+        self.indoor=indoor
+    def purr(self):
+        print(f"{self.name} is a name and it make sound{self.sound} and its indoor is {self.indoor}")
+    # add indoor attribute
+    # add purr method
+
+
+d1 = Dog("Bruno", "Woof", "Aditya")
+d1.speak()
+d1.fetch()
+
+c1 = Cat("Whiskers", "Meow", True)
+c1.speak()
+c1.purr()
