@@ -148,3 +148,41 @@ class NetBanking(Payment):
 payments = [CreditCard(), UPI(), NetBanking()]
 for payment in payments:
     payment.pay(1000)
+
+#This is a program of abstraction in oops's concept
+from abc import ABC, abstractmethod
+
+class Vehicle(ABC):
+    @abstractmethod
+    def start(self):
+        pass
+
+    @abstractmethod
+    def stop(self):
+        pass
+
+
+class Car(Vehicle):
+    def start(self):
+        print("Car is starting")
+    def stop(self):
+        print("car is stopping")
+    # implement start
+    # implement stop
+
+class Bike(Vehicle):
+    def start(self):
+        print("Bike is starting")
+    def stop(self):
+        print("Bike is stopping")
+    # implement start
+    # implement stop
+
+
+c = Car()
+c.start()
+c.stop()
+
+b = Bike()
+b.start()
+b.stop()
