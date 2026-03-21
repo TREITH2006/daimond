@@ -218,3 +218,42 @@ print(p1)               # __str__
 print(p1 + p2)         # __add__
 print(p2 == p3)         # __eq__
 print(p1 > p2)          # __gt__
+
+#this is a program of class method and static method in oops's concept
+class BankAccount:
+    bank_name = "VTU Bank"
+    total_accounts = 0
+
+    def __init__(self, owner, balance):
+        self.owner = owner
+        self.balance = balance
+        BankAccount.total_accounts += 1
+
+    def show(self):
+        return f"{self.owner} and {self.balance}"
+        # show owner and balance
+
+    @classmethod
+    def from_string(cls, data):
+        owner, balance = data.split(",")
+        balance = int(balance)
+        return cls(owner, balance)
+
+    @classmethod
+    def total(cls):
+        print(f"Total accounts: {cls.total_accounts}")
+
+    @staticmethod
+    def validate_balance(balance):
+        # return True if balance >= 500
+        # else return False
+        return balance >= 500
+            
+
+b1 = BankAccount("Aditya", 5000)
+b2 = BankAccount.from_string("Sai,3000")
+b1.show()
+b2.show()
+BankAccount.total()
+print(BankAccount.validate_balance(400))
+print(BankAccount.validate_balance(1000))
