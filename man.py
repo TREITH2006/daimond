@@ -186,3 +186,35 @@ c.stop()
 b = Bike()
 b.start()
 b.stop()
+
+#this is a magic method in oop's concept
+class Product:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+
+    def __str__(self):
+        return f"{self.name}:${self.price}"
+        # print product name and price clearly
+
+    def __add__(self, other):
+        return self.price+other.price
+        # add prices of two products
+
+    def __eq__(self, other):
+        return self.price == other.price
+        # check if two products have same price
+
+    def __gt__(self, other):
+        return self.price > other.price
+        # check if this product is more expensive
+
+
+p1 = Product("Laptop", 50000)
+p2 = Product("Phone", 30000)
+p3 = Product("Tablet", 30000)
+
+print(p1)               # __str__
+print(p1 + p2)         # __add__
+print(p2 == p3)         # __eq__
+print(p1 > p2)          # __gt__
