@@ -120,3 +120,31 @@ d1.fetch()
 c1 = Cat("Whiskers", "Meow", True)
 c1.speak()
 c1.purr()
+
+#this is a program of polymorphism in oops's concept
+class Payment:
+    def pay(self, amount):
+        print("Processing payment...")
+
+class CreditCard(Payment):
+    def pay(self,amount):
+            print(f"Paid ₹{amount} via Credit Card")
+    # override pay method
+    # print "Paid ₹{amount} via Credit Card"
+
+class UPI(Payment):
+    def pay(self,amount):
+            print(f"Paid ₹{amount} via UPI")
+    # override pay method
+    # print "Paid ₹{amount} via UPI"
+
+class NetBanking(Payment):
+    def pay(self,amount):
+            print(f"Paid ₹{amount} via Net Banking")
+    # override pay method
+    # print "Paid ₹{amount} via Net Banking"
+
+
+payments = [CreditCard(), UPI(), NetBanking()]
+for payment in payments:
+    payment.pay(1000)
